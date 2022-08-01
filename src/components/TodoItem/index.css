@@ -1,0 +1,10 @@
+.container{
+    border: 1px solid black;
+    margin: 5px auto;
+    width: 600px;
+    height: 40px;
+    font-size: 18px;
+    text-align: left;
+    line-height: 40px;
+    padding: 5px;
+}

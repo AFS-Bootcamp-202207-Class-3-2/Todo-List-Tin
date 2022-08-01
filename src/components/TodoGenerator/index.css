@@ -1,0 +1,16 @@
+.generator{
+    margin: auto;
+    margin-top: 5px;
+
+}
+.generator__btn{
+    background: rgb(87, 200, 245);
+    width: 60px;
+    height: 40px;
+    margin-left: 10px;
+}
+.generator__text {
+    width: 300px;
+    line-height: 40px;
+    font-size: 18px;
+}

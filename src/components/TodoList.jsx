@@ -1,8 +1,8 @@
 import React from "react";
 import { useState } from "react";
 
-import TodoGenerator from "./TodoGenerator";
-import TodoGroup from "./TodoGroup";
+import TodoGenerator from "./TodoGenerator/TodoGenerator";
+import TodoGroup from "./TodoGroup/TodoGroup";
 
 export default function TodoList() {
   const [inputArray, setInputArray] = useState([]);
