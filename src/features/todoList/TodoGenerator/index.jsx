@@ -10,7 +10,7 @@ export default function TodoGenerator() {
   const handleAdd = () => {
     dispatch(addTodo(todoText));
     setTodoText("");
-  }
+  };
   return (
     <div className="generator">
       <input

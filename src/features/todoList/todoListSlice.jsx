@@ -1,11 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = [
-  {
-    id: "cc53dc26-61b0-406b-99dd-b8825dd2ceec",
-    text: "todo example",
-    done: false,
-  },
+  
 ];
 
 const todoListSlice = createSlice({
@@ -19,8 +15,18 @@ const todoListSlice = createSlice({
         done: false,
       });
     },
+    doneTodo: (state, action) => {
+      const todo = state.find((target) => target.id == action.payload);
+      todo.done = !todo.done;
+    },
+    deleteTodo: (state, action) => {
+      const todoIndex = state.findIndex((target) => target.id == action.payload);
+      if(todoIndex >= 0){
+        state.splice(todoIndex, 1);
+      }
+    },
   },
 });
 
-export const { addTodo } = todoListSlice.actions;
+export const { addTodo, doneTodo, deleteTodo } = todoListSlice.actions;
 export default todoListSlice.reducer;

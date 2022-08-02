@@ -3,11 +3,11 @@ import { useSelector } from "react-redux";
 import TodoItem from "../TodoItem";
 
 export default function TodoGroup() {
-  const itemList = useSelector((state => state.todoList));
+  const itemList = useSelector((state) => state.todoList);
   return (
     <div>
       {itemList.map((itemValue, index) => {
-        return <TodoItem key={index} itemValue={itemValue} />;
+        return <TodoItem key={itemValue.id} itemValue={itemValue} />;
       })}
     </div>
   );
