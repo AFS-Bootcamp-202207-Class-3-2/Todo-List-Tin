@@ -5,6 +5,7 @@
 }
 .generator__btn{
     background: rgb(87, 200, 245);
+    border-radius: 10px;
     width: 60px;
     height: 40px;
     margin-left: 10px;
@@ -13,4 +14,6 @@
     width: 300px;
     line-height: 40px;
     font-size: 18px;
+    border-radius: 10px;
+    background-color: rgb(181, 227, 245);
 }

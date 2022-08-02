@@ -14,7 +14,7 @@ export default function TodoItem(props) {
   };
 
   return (
-    <div className="item">
+    <div className={itemValue.done ? "item_to_done" : "item"}>
       <div
         className={itemValue.done ? "item_done" : ""}
         onClick={clickDone}

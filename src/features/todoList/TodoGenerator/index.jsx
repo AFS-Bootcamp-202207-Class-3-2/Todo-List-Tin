@@ -29,6 +29,7 @@ export default function TodoGenerator() {
         value={todoText}
         onChange={(e) => setTodoText(e.target.value)}
         onKeyDown={onEnter}
+        placeholder = 'Input what you want'
       />
       <input
         className="generator__btn"
