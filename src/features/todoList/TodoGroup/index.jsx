@@ -1,5 +1,6 @@
 import React from "react";
-import TodoItem from "../TodoItem/TodoItem";
+
+import TodoItem from "../TodoItem";
 
 export default function TodoGroup(props) {
   const itemList = props.inputArray;
