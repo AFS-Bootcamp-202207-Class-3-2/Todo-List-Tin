@@ -16,11 +16,11 @@ const todoListSlice = createSlice({
       });
     },
     doneTodo: (state, action) => {
-      const todo = state.find((target) => target.id == action.payload);
+      const todo = state.find((target) => target.id === action.payload);
       todo.done = !todo.done;
     },
     deleteTodo: (state, action) => {
-      const todoIndex = state.findIndex((target) => target.id == action.payload);
+      const todoIndex = state.findIndex((target) => target.id === action.payload);
       if(todoIndex >= 0){
         state.splice(todoIndex, 1);
       }

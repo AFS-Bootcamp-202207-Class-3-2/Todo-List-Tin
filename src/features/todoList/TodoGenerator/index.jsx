@@ -8,6 +8,10 @@ export default function TodoGenerator() {
   const dispatch = useDispatch();
 
   const handleAdd = () => {
+    if (todoText.length == 0) {
+      alert("illegal input");
+      return;
+    }
     dispatch(addTodo(todoText));
     setTodoText("");
   };
