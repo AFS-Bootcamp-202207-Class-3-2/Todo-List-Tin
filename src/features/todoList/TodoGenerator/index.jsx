@@ -11,6 +11,12 @@ export default function TodoGenerator() {
     dispatch(addTodo(todoText));
     setTodoText("");
   };
+
+  const onEnter = (e) => {
+    if (e.keyCode === 13) {
+      handleAdd();
+    }
+  };
   return (
     <div className="generator">
       <input
@@ -18,6 +24,7 @@ export default function TodoGenerator() {
         type="text"
         value={todoText}
         onChange={(e) => setTodoText(e.target.value)}
+        onKeyDown={onEnter}
       />
       <input
         className="generator__btn"
