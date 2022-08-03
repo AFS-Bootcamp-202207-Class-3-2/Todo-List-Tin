@@ -2,6 +2,8 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { createTodo } from "../../../api/todos";
 import { addTodo } from "../todoListSlice";
+import { PlusOutlined } from "@ant-design/icons";
+import { Button } from "antd";
 import "./index.css";
 
 export default function TodoGenerator() {
@@ -14,8 +16,8 @@ export default function TodoGenerator() {
       return;
     }
     createTodo(todoText).then((response) => {
-      dispatch(addTodo(response.data))
-    })
+      dispatch(addTodo(response.data));
+    });
     setTodoText("");
   };
 
@@ -32,14 +34,16 @@ export default function TodoGenerator() {
         value={todoText}
         onChange={(e) => setTodoText(e.target.value)}
         onKeyDown={onEnter}
-        placeholder = 'Input what you want'
+        placeholder="Input what you want"
       />
-      <input
+      <Button
         className="generator__btn"
-        type="button"
-        value="add"
         onClick={handleAdd}
-      />
+        type="primary"
+        icon={<PlusOutlined />}
+      >
+        Add
+      </Button>
     </div>
   );
 }

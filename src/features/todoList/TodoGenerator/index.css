@@ -3,10 +3,10 @@
     margin-top: 5px;
 
 }
-.generator__btn{
+.generator .generator__btn{
     background: rgb(87, 200, 245);
     border-radius: 10px;
-    width: 60px;
+    width: 100px;
     height: 40px;
     margin-left: 10px;
 }

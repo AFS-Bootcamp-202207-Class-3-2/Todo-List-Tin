@@ -9,7 +9,7 @@ import "./index.css";
 export default function TodoList() {
   const dispatch = useDispatch();
   useEffect(() => {
-    getTodos().then(response => {
+    getTodos().then((response) => {
       dispatch(addTodos(response.data));
     });
   }, []);

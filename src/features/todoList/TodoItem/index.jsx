@@ -8,14 +8,13 @@ export default function TodoItem(props) {
 
   const clickDone = () => {
     updateTodo(itemValue.id, !itemValue.done).then((response) => {
-      console.log(response.data);
       dispatch(doneTodo(response.data));
     });
   };
 
   const clickDelete = () => {
     delTodo(itemValue.id).then((response) => {
-      dispatch(deleteTodo(response.data))
+      dispatch(deleteTodo(response.data));
     });
   };
 
