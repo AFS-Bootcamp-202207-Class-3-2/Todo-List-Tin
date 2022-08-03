@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+import { createTodo } from "../../../api/todos";
 import { addTodo } from "../todoListSlice";
 import "./index.css";
 
@@ -8,11 +9,13 @@ export default function TodoGenerator() {
   const dispatch = useDispatch();
 
   const handleAdd = () => {
-    if (todoText.length == 0) {
+    if (todoText.length === 0) {
       alert("illegal input");
       return;
     }
-    dispatch(addTodo(todoText));
+    createTodo(todoText).then((response) => {
+      dispatch(addTodo(response.data))
+    })
     setTodoText("");
   };
 

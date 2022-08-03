@@ -13,7 +13,7 @@
     border-radius: 10px;
     background-color: rgb(130, 212, 245);
     font-weight: bolder;
-    transition: all 2s;
+    transition: all 1.5s;
 }
 .item:hover {
     background-color: rgb(42, 176, 230);
@@ -34,7 +34,7 @@
     border-radius: 10px;
     font-weight: bolder;
     background-color: rgb(245, 121, 39);
-    transition: all 2s;
+    transition: all 1.5s;
 }
 
 .item_done {
