@@ -40,12 +40,40 @@
     color: rgb(53, 67, 83);
 }
 
-.item_delete {
+.item .item_delete {
     position:  absolute;
     right: 20px;
-    font-size: 30px;
+    font-size: 20px;
+    line-height: 40px;
+    margin-left: 10px;
 }
 
-.item_delete:hover {
+.item .item_delete:hover {
     text-shadow: 0 0 10px red,0 0 20px red,0 0 30px red,0 0 40px red;
+}
+
+.item_to_done .item_delete {
+    position:  absolute;
+    right: 20px;
+    font-size: 20px;
+    line-height: 40px;
+    margin-left: 10px;
+}
+
+.item_to_done .item_delete:hover {
+    text-shadow: 0 0 10px red,0 0 20px red,0 0 30px red,0 0 40px red;
+}
+
+.item .item_edit {
+    position:  absolute;
+    right: 50px;
+    font-size: 20px;
+    line-height: 40px;
+}
+
+.item_to_done .item_edit {
+    position:  absolute;
+    right: 50px;
+    font-size: 20px;
+    line-height: 40px;
 }

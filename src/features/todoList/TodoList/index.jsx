@@ -12,12 +12,12 @@ export default function TodoList() {
     getTodos().then((response) => {
       dispatch(addTodos(response.data));
     });
-  }, []);
+  }, [dispatch]);
   return (
     <div className="list_container">
       <h1>Todo List</h1>
-      <TodoGroup />
       <TodoGenerator />
+      <TodoGroup />
     </div>
   );
 }

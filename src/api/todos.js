@@ -14,4 +14,8 @@ export const updateTodo = (id, done) => {
 
 export const delTodo = (id) => {
     return api.delete("/todos/" + id);
-  };
+};
+
+export const updateTextTodo = (id, text) => {
+  return api.put("/todos/" + id, {text});
+};

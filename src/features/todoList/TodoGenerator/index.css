@@ -5,15 +5,15 @@
 }
 .generator .generator__btn{
     background: rgb(87, 200, 245);
-    border-radius: 10px;
+    border-radius: 5px;
     width: 100px;
     height: 40px;
     margin-left: 10px;
 }
-.generator__text {
-    width: 300px;
-    line-height: 40px;
+.generator .generator__text {
+    width: 400px;
+    line-height: 30px;
     font-size: 18px;
-    border-radius: 10px;
+    border-radius: 5px;
     background-color: rgb(181, 227, 245);
 }

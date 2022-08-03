@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+import { Button, Input, message } from "antd";
+import { PlusOutlined } from "@ant-design/icons";
+
 import { createTodo } from "../../../api/todos";
 import { addTodo } from "../todoListSlice";
-import { PlusOutlined } from "@ant-design/icons";
-import { Button } from "antd";
 import "./index.css";
 
 export default function TodoGenerator() {
@@ -12,8 +13,8 @@ export default function TodoGenerator() {
 
   const handleAdd = () => {
     if (todoText.length === 0) {
-      alert("illegal input");
-      return;
+      message.warning('Cannot add an empty todo!');
+      return ;
     }
     createTodo(todoText).then((response) => {
       dispatch(addTodo(response.data));
@@ -28,13 +29,12 @@ export default function TodoGenerator() {
   };
   return (
     <div className="generator">
-      <input
-        className="generator__text"
-        type="text"
-        value={todoText}
-        onChange={(e) => setTodoText(e.target.value)}
-        onKeyDown={onEnter}
-        placeholder="Input what you want"
+      <Input 
+      className="generator__text" 
+      placeholder="Input what you want" 
+      value={todoText}
+      onChange={(e) => setTodoText(e.target.value)}
+      onKeyDown={onEnter}
       />
       <Button
         className="generator__btn"
