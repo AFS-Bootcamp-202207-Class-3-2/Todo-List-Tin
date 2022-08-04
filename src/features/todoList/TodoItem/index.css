@@ -1,3 +1,4 @@
+
 .item {
     border: 1px solid black;
     margin: 5px auto;
@@ -40,7 +41,7 @@
     color: rgb(53, 67, 83);
 }
 
-.item .item_delete {
+#item-todo .item .item_delete {
     position:  absolute;
     right: 20px;
     font-size: 20px;
@@ -48,11 +49,7 @@
     margin-left: 10px;
 }
 
-.item .item_delete:hover {
-    text-shadow: 0 0 10px red,0 0 20px red,0 0 30px red,0 0 40px red;
-}
-
-.item_to_done .item_delete {
+#item-todo .item_to_done .item_delete {
     position:  absolute;
     right: 20px;
     font-size: 20px;
@@ -60,18 +57,14 @@
     margin-left: 10px;
 }
 
-.item_to_done .item_delete:hover {
-    text-shadow: 0 0 10px red,0 0 20px red,0 0 30px red,0 0 40px red;
-}
-
-.item .item_edit {
+#item-todo .item .item_edit {
     position:  absolute;
     right: 50px;
     font-size: 20px;
     line-height: 40px;
 }
 
-.item_to_done .item_edit {
+#item-todo .item_to_done .item_edit {
     position:  absolute;
     right: 50px;
     font-size: 20px;

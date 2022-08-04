@@ -4,8 +4,8 @@ import { Modal } from "antd";
 import TextArea from "antd/lib/input/TextArea";
 import { EditOutlined, DeleteOutlined } from "@ant-design/icons";
 
-import { doneTodo, deleteTodo, updateTest } from "../todoListSlice";
-import { updateTodo, delTodo, updateTextTodo } from "../../../api/todos";
+import { doneTodo, deleteTodo, updateText } from "../todoListSlice";
+import { updateTodo, delTodo } from "../../../api/todos";
 import "./index.css";
 
 export default function TodoItem(props) {
@@ -16,14 +16,19 @@ export default function TodoItem(props) {
   const dispatch = useDispatch();
 
   const clickDone = () => {
-    updateTodo(itemValue.id, !itemValue.done).then((response) => {
-      dispatch(doneTodo(response.data));
+    const todo = {
+      done: !itemValue.done,
+    };
+    updateTodo(itemValue.id, todo).then((response) => {
+      dispatch(doneTodo(response.data.data));
     });
   };
 
   const clickDelete = () => {
     delTodo(itemValue.id).then((response) => {
-      dispatch(deleteTodo(response.data));
+      if (response.status === 204) {
+        dispatch(deleteTodo(response.data.data));
+      }
     });
   };
 
@@ -33,15 +38,20 @@ export default function TodoItem(props) {
   };
 
   const handleOk = () => {
+    const todo = {
+      text: todoText,
+    };
     setConfirmLoading(true);
-    updateTextTodo(itemValue.id, todoText).then((response) => {
-      console.log(response.data);
-      dispatch(updateTest(response.data));
+    updateTodo(itemValue.id, todo).then((response) => {
+      dispatch(doneTodo(response.data.data));
     });
-    setTimeout(() => {
+    const timer = setTimeout(() => {
       setVisible(false);
       setConfirmLoading(false);
     }, 500);
+    return () => {
+      clearTimeout(timer);
+    };
   };
 
   const handleCancel = () => {
@@ -50,7 +60,7 @@ export default function TodoItem(props) {
   };
 
   return (
-    <>
+    <div id="item-todo">
       <div className={itemValue.done ? "item_to_done" : "item"}>
         <div className={itemValue.done ? "item_done" : ""} onClick={clickDone}>
           {itemValue.text}
@@ -69,8 +79,12 @@ export default function TodoItem(props) {
         onOk={handleOk}
         onCancel={handleCancel}
       >
-        <TextArea rows={4} value={todoText} onChange={(e)=>setTodoText(e.target.value)}/>
+        <TextArea
+          rows={4}
+          value={todoText}
+          onChange={(e) => setTodoText(e.target.value)}
+        />
       </Modal>
-    </>
+    </div>
   );
 }
