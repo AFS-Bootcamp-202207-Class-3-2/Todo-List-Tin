@@ -7,7 +7,7 @@ const todoListSlice = createSlice({
   initialState,
   reducers: {
     addTodo: (state, action) => {
-      state.push(action.payload);
+      state.unshift(action.payload);
     },
     doneTodo: (state, action) => {
       const todoIndex = state.findIndex(
