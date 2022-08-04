@@ -19,7 +19,7 @@ const todoListSlice = createSlice({
     },
     deleteTodo: (state, action) => {
       const todoIndex = state.findIndex(
-        (target) => target.id === action.payload.id
+        (target) => target.id === action.payload
       );
       if (todoIndex >= 0) {
         state.splice(todoIndex, 1);
@@ -27,14 +27,6 @@ const todoListSlice = createSlice({
     },
     addTodos: (state, action) => {
       return action.payload;
-    },
-    updateText: (state, action) => {
-      const todoIndex = state.findIndex(
-        (target) => target.id === action.payload.id
-      );
-      if (todoIndex >= 0) {
-        state[todoIndex] = action.payload;
-      }
     },
   },
 });

@@ -16,8 +16,11 @@ export default function TodoGenerator() {
       message.warning('Cannot add an empty todo!');
       return ;
     }
-    createTodo(todoText).then((response) => {
-      dispatch(addTodo(response.data));
+    const todo = {
+      text: todoText,
+    }
+    createTodo(todo).then((response) => {
+      dispatch(addTodo(response.data.data));
     });
     setTodoText("");
   };

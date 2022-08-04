@@ -4,7 +4,7 @@ import { Modal } from "antd";
 import TextArea from "antd/lib/input/TextArea";
 import { EditOutlined, DeleteOutlined } from "@ant-design/icons";
 
-import { doneTodo, deleteTodo, updateText } from "../todoListSlice";
+import { doneTodo, deleteTodo } from "../todoListSlice";
 import { updateTodo, delTodo } from "../../../api/todos";
 import "./index.css";
 
@@ -26,9 +26,7 @@ export default function TodoItem(props) {
 
   const clickDelete = () => {
     delTodo(itemValue.id).then((response) => {
-      if (response.status === 204) {
-        dispatch(deleteTodo(response.data.data));
-      }
+      dispatch(deleteTodo(response.data.data));
     });
   };
 

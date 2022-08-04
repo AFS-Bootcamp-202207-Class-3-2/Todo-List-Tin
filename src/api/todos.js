@@ -5,7 +5,7 @@ export const getTodos = () => {
 };
 
 export const createTodo = (text) => {
-  return api.post("/todos", { text });
+  return api.post("/todos", text);
 };
 
 export const updateTodo = (id, todo) => {
@@ -15,7 +15,3 @@ export const updateTodo = (id, todo) => {
 export const delTodo = (id) => {
   return api.delete("/todos/" + id);
 };
-
-// export const updateTextTodo = (id, text) => {
-//   return api.put("/todos/" + id, {text});
-// };
